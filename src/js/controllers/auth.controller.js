@@ -12,11 +12,11 @@ class AuthController{
             const passwordIsValid = await bcrypt.compare(password, user.password);
 
             if(!user){
-                return res.status(404).send({message: "Usuário ou senha não incorreto"});
+                return res.status(400).send({message: "Usuário ou senha incorreto"});
             }
             
             if(!passwordIsValid){
-                return res.status(400).send({message: "Usuário ou senha não incorreto"});
+                return res.status(400).send({message: "Usuário ou senha incorreto"});
             }
 
             res.status(200).send(user);            
