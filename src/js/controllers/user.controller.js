@@ -5,10 +5,10 @@ class UserController {
     //async para dizer que é uma função assincrona
     create = async (req, res) => {
         try {//constante que verifica todos os campos
-            const { name, email, password, avatar} = req.body;
+            const { name, email, password} = req.body;
 
 
-            if (!name || !email || !password || !avatar) {
+            if (!name || !email || !password) {
                 res.status(400).send({ message: "Preencha todos os espaços" });
             }
 
@@ -25,7 +25,6 @@ class UserController {
                     id: user._id,
                     name,
                     email,
-                    avatar,
                 }
             });
         } catch (err) {
@@ -57,9 +56,9 @@ class UserController {
 
     update = async (req, res) => {
         try {
-            const { name, email, password, avatar} = req.body;
+            const { name, email, password} = req.body;
 
-            if (!name && !email && !password && !avatar) {
+            if (!name && !email && !password) {
                 res.status(400).send({ message: "Submita pelo menos um  campo para fazer o Update" });
             };
 
@@ -71,7 +70,6 @@ class UserController {
                 name,
                 email,
                 password,
-                avatar,            
             );
             res.send({ message: "Usuario foi atualizado com sucesso!" });
         } catch (err) {

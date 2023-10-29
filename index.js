@@ -1,9 +1,11 @@
 const express = require("express");
 const connectDatabase = require("./src/js/db.js");
 const routes = require("./src/js/routes/routes.js");
- 
-const app = express()
-const port = process.env.PORT || 3000;
+var cors = require('cors');
+
+const app = express();
+app.use(cors());
+const port = process.env.PORT || 3001;
 //process.env.PORT para indicar a porta utilizada pelo banco
 
 connectDatabase();

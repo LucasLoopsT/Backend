@@ -19,7 +19,7 @@ class AuthController{
                 return res.status(400).send({message: "Usuário ou senha não incorreto"});
             }
 
-            res.send("Login executado!");            
+            res.status(200).send(user);            
         } catch(err){
             res.status(500).send(err.message);
         };

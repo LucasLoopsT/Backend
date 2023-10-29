@@ -10,7 +10,7 @@ const findAllService = () => User.find();
 const findByIdService = (id) => User.findById(id);
 
 //findOneAndUpdate é um método do Mongoose que permite procurar um documento com base em critérios de consulta 
-const updateService = (id,name,email,password,avatar) => User.findOneAndUpdate({_id: id},{name,email,password,avatar});
+const updateService = (id, name, email, password) => User.findOneAndUpdate({_id: id}, {name, email, password});
 //findOneAndUpdate vai procurar por um campo e atualizar
 //_id é o id do mongodb e id é o daqui
 
