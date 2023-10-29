@@ -7,7 +7,6 @@ class UserController {
         try {//constante que verifica todos os campos
             const { name, email, password} = req.body;
 
-
             if (!name || !email || !password) {
                 res.status(400).send({ message: "Preencha todos os espaços" });
             }
@@ -41,7 +40,7 @@ class UserController {
             }
             res.send(users);
         } catch (err) {
-            res.status(500).send({ message: err.mensage })
+            res.status(500).send({ message: err.message })
         }
     };
 
